@@ -25,6 +25,8 @@ public class Order {
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
+    //Lazy할시 프록시 객체를 넣어놓고
+    //필요할 때 DB에서 꺼내서 사용
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL )
     private List<OrderItem> orderItems = new ArrayList<>();
